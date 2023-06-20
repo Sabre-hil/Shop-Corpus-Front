@@ -1,0 +1,88 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  
+  &-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+  &-block-links {
+    display: flex;
+    align-items: center
+  }
+
+  &-search-block {
+    position: relative;
+    margin-right: 200px;
+  }
+
+  &__link {
+    margin-right: 30px;
+    text-decoration: none;
+    color: var(--color-dark);
+    font-size: 18px;
+  }
+
+  &__input {
+    width: 350px;
+    height: 40px;
+    background-color: var(--background-color-submain);
+    // padding:10px 5px 15px 20px; - верхнее поле 10px - правое поле 5px - нижнее поле 15px - левое поле 20px
+    padding: 13px 30px 13px 38px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+  }
+
+  &__search {
+    position: absolute;
+    opacity: 0.4;
+    bottom: 10px;
+    left: 8px;
+    margin-right: 12px;
+  }
+
+  &__clear {
+    position: absolute;
+    opacity: 0.4;
+    bottom: 12px;
+    right: 8px;
+  }
+
+  &-help-block {
+    display: flex;
+    align-items: center;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 60px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      &--image {
+        margin-bottom: 5px;
+      }
+
+      &--name {
+        color: #808080;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  }
+
+  
+
+  
+
+
+
+
