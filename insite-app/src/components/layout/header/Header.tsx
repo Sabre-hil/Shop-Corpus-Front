@@ -9,7 +9,7 @@ const Header: FC = () => {
     <div className="container">
       <div className={styles['header-block']}>
         <Link href='/'>
-        <Image src='/insite.svg' alt='Logo' width={157} height={34}/>
+        <Image className={styles['header-logo']} src='/insite.svg' alt='Logo' width={120} height={34}/>
         </Link>
       <div className={styles['header-block-links']}>
         <Link href='/' className={styles['header__link']} >Статьи</Link>
@@ -27,13 +27,17 @@ const Header: FC = () => {
           </Link>
           <Link href='/' className={styles['header-help-block__item--name']}>Адрес</Link>
         </div>
+        <div id={styles.visible} className={styles['header-help-block__item']}>
+          <Image className={styles['header-help-block__item--image']} src='/search.svg' alt='Search' width={19} height={19}/>
+          <span className={styles['header-help-block__item--name']}>Поиск</span>
+        </div>
         <div className={styles['header-help-block__item']}>
         <Link href='/'><Image className={styles['header-help-block__item--image']} src='/login.svg' alt='Login' width={30} height={30}/></Link>
           <Link href='/' className={styles['header-help-block__item--name']}>Войти</Link>
         </div>
         <div className={styles['header-help-block__item']}>
         <Link href='/'><Image className={styles['header-help-block__item--image']} src='/connect-with-us.svg' alt='Connect with us' width={30} height={30}/></Link>
-          <Link href='/' className={styles['header-help-block__item--name']}>Связяться с нами</Link>
+          <Link href='/' className={styles['header-help-block__item--name']}>Связяться<br/>с нами</Link>
         </div>
         </div>
       </div>

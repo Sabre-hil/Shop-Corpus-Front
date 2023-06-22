@@ -1,3 +1,7 @@
+#visible {
+  display: none;
+}
+
 .header {
   height: var(--header-height);
   display: flex;
@@ -10,12 +14,12 @@
 
   &-block-links {
     display: flex;
-    align-items: center
+    align-items: center;
   }
 
   &-search-block {
     position: relative;
-    margin-right: 200px;
+
   }
 
   &__link {
@@ -29,7 +33,6 @@
     width: 350px;
     height: 40px;
     background-color: var(--background-color-submain);
-    // padding:10px 5px 15px 20px; - верхнее поле 10px - правое поле 5px - нижнее поле 15px - левое поле 20px
     padding: 13px 30px 13px 38px;
     border-radius: 6px;
     border: none;
@@ -53,13 +56,16 @@
 
   &-help-block {
     display: flex;
-    align-items: center;
 
     &__item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 60px;
+      margin-right: 50px;
+
+      &:nth-сhild(2) {
+        display: none;
+      }
 
       &:last-child {
         margin-right: 0px;
@@ -73,16 +79,134 @@
         color: #808080;
         font-size: 14px;
         text-decoration: none;
+        text-align: center;
       }
     }
   }
+}
 
+@media (max-width: 1200px) {
+  .header {
+  
+    &-logo {
+      width: 100px;
+    }
+
+    &__link {
+      margin-right: 20px;
+      font-size: 16px;
+    }
+  
+    &__input {
+      width: 300px;
+      font-size: 15px;
+    }
+  
+    &-help-block {
+  
+      &__item {
+        margin-right: 30px;
+  
+        &--image {
+          width: 24px;
+          height: 24px;
+        }
+
+        &--name {
+          font-size: 12px;
+        }
+      }
+    }
   }
+}
 
+@media (max-width: 992px) {
+  .header {
   
+    &-logo {
+      width: 80px;
+    }
 
+    &__link {
+      margin-right: 8px;
+      font-size: 12px;
+    }
   
+    &__input {
+      width: 250px;
+      font-size: 12px;
+    }
+  
+    &-help-block {
+  
+      &__item {
+        margin-right: 20px;
+  
+        &--image {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}
 
+@media (max-width: 768px) {
+  .header {
+  
+    &-logo {
+      width: 70px;
+    }
 
+    &__link {
+      display: none;
+    }
 
+    &-help-block {
+  
+      &__item {
+        margin-right: 20px;
 
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+  
+    &-logo {
+      width: 60px;
+    }
+
+    &-block-links {
+      display: none;
+    }
+
+    &-help-block {
+  
+      &__item {
+        margin-right: 20px;
+
+        &--image {
+          width: 19px;
+          height: 19px;
+        }
+
+        &--name {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #visible {
+    display: flex;
+    flex-direction: column;
+  }
+}
