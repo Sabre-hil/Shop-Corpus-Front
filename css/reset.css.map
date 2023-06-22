@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK;AACL,MAAM;AACN,QAAQ;AACR,MAAM,CAAC;EACH,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,OAAO;CAChB",
+    "sources": [
+        "../insite-app/src/styles/reset.scss"
+    ],
+    "names": [],
+    "file": "reset.css"
+}

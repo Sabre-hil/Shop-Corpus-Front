@@ -1,0 +1,30 @@
+.consultation {
+  margin: 66px 0px;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    color: var(--background-color-footer);
+    font-family: var(--font-family-submain);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 45px;
+  }
+
+  &__button {
+    width: 300px;
+    height: 60px;
+    color: var(--color-white);
+    padding: 22px 90px 22px 90px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    background-color: var(--background-color-sort-and-button);
+    border-radius: 4px;
+    border: none;
+  }
+}
