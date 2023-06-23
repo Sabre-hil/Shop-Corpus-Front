@@ -3,8 +3,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from './Home.module.css';
 import Layout from '../layout/Layout';
-import { Ifurniture } from '../../services/furniture.service';
+import { API_URL, Ifurniture } from '../../services/furniture.service';
 import Furniture from '../furniture/Furniture';
+import { GetStaticProps } from 'next';
 
 export interface IfurnitureData {
   furnitures: Ifurniture[]
@@ -23,4 +24,14 @@ const Home: FC<IfurnitureData> = ({furnitures}) => {
   );
 };
 
-export default Home
+export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const responce = await fetch(`${API_URL}/furniture`);
+  const furnitures = await responce.json();
+
+  return {
+    props: { furnitures },
+    revalidate: 60
+  }
+}
