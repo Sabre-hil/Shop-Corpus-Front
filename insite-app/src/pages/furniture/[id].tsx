@@ -1,12 +1,22 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import { API_URL, furnitureService } from '../../services/furniture.service';
-import { IfurnitureDataSingle } from '../../components/home/Home';
+import { API_URL, furnitureService } from '../../entities/api/furnitureApi';
 import FurnitureDetail from '@/components/furniture-details/FurnitureDetail';
+import { FurnitureType } from '@/app/types/furnitureTypes';
+import { wrapper } from '@/app/store/store';
+import { addOneaddFurniture } from '@/app/store/furnitureSlice/furnitureSlice';
 
 interface Params extends ParsedUrlQuery {
   id: string;
 }
+
+const FurnitureDetailPage: NextPage = () => {
+  return (
+    <FurnitureDetail/>
+  )
+}
+
+export default FurnitureDetailPage;
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const furnitures = await furnitureService.getAllfurniture();
@@ -21,20 +31,19 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
-  const response = await fetch(`${API_URL}/furniture/${params?.id}`);
-  const furniture = await response.json()
-  return {
-    props: { furniture },
-    revalidate: 60
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps((store) => async ({params}) => {
+  try {
+    const response = await fetch(`${API_URL}/furniture/${params?.id}`);
+    const furniture = await response.json();
+    store.dispatch(addOneaddFurniture(furniture));
+    return {
+      props: {},
+      revalidate: 60
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      props: {}
+    }
   }
-}
-
-
-const FurnitureDetailPage: NextPage<IfurnitureDataSingle> = ({furniture}) => {
-  return (
-    <FurnitureDetail furniture={furniture}/>
-  )
-}
-
-export default FurnitureDetailPage;
+})
