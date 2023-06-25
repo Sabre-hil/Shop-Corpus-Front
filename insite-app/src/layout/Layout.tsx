@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import { Roboto  }from 'next/font/google';
-import Meta from '../seo/Meta';
-import { IMeta } from '../seo/Meta';
+import Meta from '../components/seo/Meta';
+import { IMeta } from '../components/seo/Meta';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import Consultation from './consultation/Consultation';

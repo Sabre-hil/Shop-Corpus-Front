@@ -1,20 +1,32 @@
-import Home, { IfurnitureData } from "@/components/home/Home";
-import { GetServerSideProps, GetStaticProps, NextPage } from "next"
-import { API_URL, furnitureService, Ifurniture } from '../services/furniture.service';
-import wrapper from './_app';
+import App from "@/app/App";
+import { API_URL } from "@/entities/api/furnitureApi";
+import { GetStaticProps, NextPage } from "next"
+import { wrapper } from '../app/store/store';
+import { useTypedSelector } from '../shared/lib/useTypedSelector';
+import { addFurnitures } from '@/app/store/furnitureSlice/furnitureSlice';
 
-const HomePage: NextPage<IfurnitureData> = ({furnitures}) => {
-  return <Home furnitures={furnitures} />
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const responce = await fetch(`${API_URL}/furniture`);
-  const furnitures = await responce.json();
-
-  return {
-    props: { furnitures },
-    revalidate: 60
-  }
+const HomePage: NextPage = () => {
+  return <App />
 }
 
 export default HomePage;
+
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps((store) => async () => {
+  try {
+  const responce = await fetch(`${API_URL}/furniture`);
+  const furnitures = await responce.json();
+  // const furnitures = await furnitureService.getAllfurniture();
+  store.dispatch(addFurnitures(furnitures))
+  const a = store.getState()
+  
+  return {
+    props: {},
+    revalidate: 60
+  }
+  } catch (error) {
+    console.log(error)
+    return {
+      props : {},
+    }
+  }
+})

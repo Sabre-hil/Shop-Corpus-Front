@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { FC } from 'react';
-import { IfurnitureDataSingle } from '../home/Home';
 import Image from 'next/image';
+import { FurnitureType } from '@/app/types/furnitureTypes';
 
-const Furniture: FC<IfurnitureDataSingle> = ({furniture}) => {
+const Furniture: FC<FurnitureType> = (furniture: FurnitureType) => {
   const image = furniture.Device_Images.map((el) => el.path);
+
   return (
       <main>
         <div className='container'>
