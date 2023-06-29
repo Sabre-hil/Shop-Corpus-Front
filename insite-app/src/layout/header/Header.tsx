@@ -11,34 +11,34 @@ const Header: FC = () => {
         <Link href='/'>
         <Image className={styles['header-logo']} src='/insite.svg' alt='Logo' width={120} height={34}/>
         </Link>
-      <div className={styles['header-block-links']}>
+      <nav className={styles['header-block-links']}>
         <Link href='/' className={styles['header__link']} >Статьи</Link>
         <Link href='/' className={styles['header__link']}>Контакты</Link>
-        <div className={styles['header-search-block']}>
+        <figure className={styles['header-search-block']}>
           <Image className={styles['header__search']} src='/search.svg' alt='Search' width={22} height={22}/>
           <input className={styles['header__input']} type="text" placeholder='Я ищу...' />
           <Image className={styles['header__clear']} src='/clear.svg' alt='Clear' width={17} height={17}/>
-        </div>
+        </figure>
         
-        </div>
+        </nav>
       <div className={styles['header-help-block']}>
-        <div className={styles['header-help-block__item']}>
+        <nav className={styles['header-help-block__item']}>
           <Link href='/'><Image className={styles['header-help-block__item--image']} src='/location.svg' alt='Location' width={30} height={30}/>
           </Link>
           <Link href='/' className={styles['header-help-block__item--name']}>Адрес</Link>
-        </div>
-        <div id={styles.visible} className={styles['header-help-block__item']}>
+        </nav>
+        <figure id={styles.visible} className={styles['header-help-block__item']}>
           <Image className={styles['header-help-block__item--image']} src='/search.svg' alt='Search' width={19} height={19}/>
           <span className={styles['header-help-block__item--name']}>Поиск</span>
-        </div>
-        <div className={styles['header-help-block__item']}>
+        </figure>
+        <nav className={styles['header-help-block__item']}>
         <Link href='/'><Image className={styles['header-help-block__item--image']} src='/login.svg' alt='Login' width={30} height={30}/></Link>
           <Link href='/' className={styles['header-help-block__item--name']}>Войти</Link>
-        </div>
-        <div className={styles['header-help-block__item']}>
+        </nav>
+        <nav className={styles['header-help-block__item']}>
         <Link href='/'><Image className={styles['header-help-block__item--image']} src='/connect-with-us.svg' alt='Connect with us' width={30} height={30}/></Link>
           <Link href='/' className={styles['header-help-block__item--name']}>Связяться<br/>с нами</Link>
-        </div>
+        </nav>
         </div>
       </div>
     </div>

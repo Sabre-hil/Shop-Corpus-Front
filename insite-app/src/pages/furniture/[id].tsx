@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { API_URL, furnitureService } from '../../entities/api/furnitureApi';
 import FurnitureDetail from '@/components/furniture-details/FurnitureDetail';
-import { FurnitureType } from '@/app/types/furnitureTypes';
 import { wrapper } from '@/app/store/store';
 import { addOneaddFurniture } from '@/app/store/furnitureSlice/furnitureSlice';
 

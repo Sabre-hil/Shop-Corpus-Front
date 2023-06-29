@@ -1,28 +1,14 @@
 import { FC } from 'react';
 import Layout from '../layout/Layout';
-import { API_URL } from '../entities/api/furnitureApi';
-import Furniture from '../components/furniture/Furniture';
-import { GetStaticProps } from 'next';
-import { useTypedSelector } from '../shared/lib/useTypedSelector';
+import Furniture from '@/components/furniture/Furniture';
 
 const App: FC = () => {
-  const data = useTypedSelector((state) => state.furnitures.furnitures)
 
   return (
-      <Layout title='INSITE | Лучшая мебель'>
-        {data?.length ? data.map(furniture => <Furniture key={furniture?.id} {...furniture}/>) : <div>Users not found</div>}
+      <Layout title='INSITE | Лучшая мебель в Грозном | Лучшая кухня в Грозном | Лучшие шкафы в Грозном - по отличной цене - по хорошей цене' description='Кухня в Грозном - Шкафы в Грозном - Мебель в Грозном - ТВ зона - Спальня в Грозном - Гардеробная - По низким и доступным ценам - статьи как лучше оформить интерьер'>
+        <Furniture />
       </Layout>
   );
 };
 
 export default App;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const responce = await fetch(`${API_URL}/furniture`);
-  const furnitures = await responce.json();
-
-  return {
-    props: { furnitures },
-    revalidate: 60
-  }
-}

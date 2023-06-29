@@ -1,7 +1,7 @@
 body {
   // fonts
-  --font-family-main: "Mulish", sans-serif;
-  --font-family-submain: "Nunito", sans-serif;
+  --font-family-main: 'Mulish', sans-serif;
+  --font-family-submain: 'Nunito', sans-serif;
 
   // font-color
   --color-white: #FFFFFF;
@@ -17,4 +17,6 @@ body {
   // sizes
   --header-height: 125px;
   --content-container-dekstop: 90vw;
+  --auto-grid-min-size: 20rem;
+  --auto-grid-min-size--M: 17rem;
 }

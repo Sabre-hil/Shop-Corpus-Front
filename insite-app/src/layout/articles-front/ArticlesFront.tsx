@@ -7,8 +7,7 @@ const ArticlesFront: FC = () => {
     <div className="container">
       <div className={styles['articles-wrapper']}>
         <div className={styles['articles-block']}>
-          <span className={styles['articles__text']}></span>
-          Читайте здесь наши
+          <span className={styles['articles__text']}>Читайте здесь наши</span>
           <span className={styles["articles__text--strong"]}>Статьи</span>
           </div>
           
