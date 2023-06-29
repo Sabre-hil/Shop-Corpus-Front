@@ -10,8 +10,8 @@ const Footer: FC = () => {
         <Image
           width={100}
           height={37}
-          src="/insite.svg"
-          alt="Logo: Best Tour Plane"
+          src="/InsIte-footer.svg"
+          alt="Logo: Insite"
           className={styles['footer-logo']}
         />
         <div className={`footer__list ${styles['footer__categories']}`}>
@@ -78,7 +78,7 @@ const Footer: FC = () => {
           </div>
         </div>
         <div className={styles['footer__legal']}>
-          <h3 className={styles['footer__title"']}>ЮРИД ИНФОРМАЦИЯ</h3>
+          <h3 className={styles["footer__title"]}>ЮРИД ИНФОРМАЦИЯ</h3>
           <ul className={styles['footer__ul']}>
             <li className={styles['footer__li']}>
               <a href="#" className={styles['footer__link']}>Условия</a>
@@ -100,7 +100,7 @@ const Footer: FC = () => {
             Не стесняйтесь обращаться к нам по телефону, электронной почте или через нашего телеграм бота
           </p>
           <ul className={styles['footer__ul']}>
-            <li className={styles['footer__ item']}>
+            <li className={styles['footer__item']}>
               <div className={styles['footer__icon-wrapper']}>
                 <Image
                   width={20}
@@ -110,8 +110,7 @@ const Footer: FC = () => {
                   alt="Map"
                 />
               </div>
-              9748 Blossom Hill Rd undefined Lansing, Idaho 68545 United
-              States
+              ул. Умара Садаева, 12 А, Грозный, Чеченская Респ, 366007
             </li>
             <li className={styles['footer__item']}>
               <div className={styles['footer__icon-wrapper']}>
@@ -123,10 +122,7 @@ const Footer: FC = () => {
                   alt="Phone call"
                 />
               </div>
-              Tel (business hours) : 269 1500 Tel (hotline) Monday -
-              Saturday:<br />
-              52-56-61-38 (08:00 am – 20:00 pm) Tel (hotline) Sunday:<br />
-              52-56-61-38 (08:00 am – 14:00 pm)<br />
+              Tel : +7 (928) 021-27-99
             </li>
             <li className={styles['footer__item']}>
               <div className={styles['footer__icon-wrapper']}>
@@ -138,7 +134,19 @@ const Footer: FC = () => {
                   alt="Email"
                 />
               </div>
-              cherly.lawson@example.com
+              insite@gmail.com
+            </li>
+            <li className={styles['footer__item']}>
+              <div className={styles['footer__icon-wrapper']}>
+                <Image
+                  width={20}
+                  height={20}
+                  className={styles['footer__icon']}
+                  src="/telegram.svg"
+                  alt="Telegram"
+                />
+              </div>
+              @insite
             </li>
           </ul>
         </div>

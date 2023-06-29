@@ -5,7 +5,7 @@
   background-image: url(/articles.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   &::before {
     content: '';
@@ -36,7 +36,7 @@
     color: var(--color-white);
     font-family: var(--font-family-main);
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 24px;
     line-height: 30px;
     text-align: left;
@@ -71,7 +71,6 @@
 
     }
   }
-
   &-link {
     &__text {
       font-family: var(--font-family-main);
@@ -79,6 +78,8 @@
       font-weight: 600;
       font-size: 36px;
       line-height: 45px;
+      color: var(--color-white);
+      margin-bottom: 8px;
     }
   }
 
@@ -86,12 +87,108 @@
     font-family: var(--font-family-submain);
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 19px;
-    padding: 25px 0px 25px 0;
+    width: auto;
+    height: 50px;
     background-color: var(--background-color-sort-and-button);
     color: var(--color-white);
     border: none;
     border-radius: 7px;
+  }
+}
+
+@media (max-width: 992px) {
+  .articles {
+    &__text {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      &--strong {
+        font-size: 28px;
+      }
+    }
+    &-description {
+      &__strong {
+        display: block;
+        color: var(--color-white);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 45px;
+        text-transform: uppercase;
+  
+      }
+    }
+    &-link {
+      &__text {
+        font-size: 28px;
+      }
+    }
+    &__button {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .articles {
+    &-block {
+      margin-bottom: 14px;
+    }
+    &__text {
+      text-align: center;
+      &--strong {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+    &-description {
+      text-align: center;
+      &__strong {
+        text-align: center;
+      }
+    }
+    &-link {
+      &__text {
+        text-align: center;
+      }
+    }
+    &__button {
+      font-size: 16px;
+    }
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .articles {
+    &-block {
+      margin-bottom: 14px;
+    }
+    &__text {
+      font-size: 16px;
+      text-align: center;
+      &--strong {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+    &-link {
+      &__text {
+        font-size: 25px;
+        text-align: center;
+      }
+    }
+    &__button {
+      font-size: 16px;
+    }
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

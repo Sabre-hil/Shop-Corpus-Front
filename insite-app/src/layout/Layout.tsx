@@ -1,25 +1,25 @@
 import { FC, PropsWithChildren } from 'react';
-import { Roboto  }from 'next/font/google';
-import Meta from '../components/seo/Meta';
-import { IMeta } from '../components/seo/Meta';
+import { usePathname, useRouter } from 'next/navigation';
+import Meta from './seo/Meta';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import Consultation from './consultation/Consultation';
-import Activities from './activities/Activities';
 import ArticlesFront from './articles-front/ArticlesFront';
+import { MetaTegsType } from '@/app/types/metaTegsType';
+import SortPanel from './sort-panel/SortPanel';
+import BreadCrumbs from './breadcrumbs/BreadCrumbs';
 
-
-
-const roboto = Roboto({weight: ['400', '700', '900'], subsets: ['latin'], variable: '--roboto' });
-
-const Layout: FC<PropsWithChildren<IMeta>> = ({children, title, description}) => {
+const Layout: FC<PropsWithChildren<MetaTegsType>> = ({children, title, description}) => {
+  const router = usePathname();
+  
   return (
     <Meta title={title} description={description}>
       <Header/>
+      {router === '/'? <SortPanel/> : <BreadCrumbs/>}
       {children}
-      <ArticlesFront/>
-      <Activities/>
-      <Consultation/>
+      {router === '/'? <ArticlesFront/>: <></>}
+      {/* {router === '/'? <Map/> : <></>} */}
+      {router === '/'? <Consultation/> : <></>}
       <Footer/>
       </Meta>
   )
